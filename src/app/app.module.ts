@@ -13,6 +13,7 @@ import {HeaderComponent} from './header/header.component';
 import {environment} from "../environments/environment";
 import { EffectsModule } from '@ngrx/effects';
 import {AuthEffects} from "./auth/store/auth.effects";
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {AuthEffects} from "./auth/store/auth.effects";
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
     EffectsModule.forRoot([AuthEffects]),
+    StoreRouterConnectingModule.forRoot(),
   ],
   bootstrap: [AppComponent]
 })
