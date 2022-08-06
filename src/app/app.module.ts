@@ -14,6 +14,7 @@ import {environment} from "../environments/environment";
 import { EffectsModule } from '@ngrx/effects';
 import {AuthEffects} from "./auth/store/auth.effects";
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import {RecipeEffects} from './recipes/store/recipe.effects';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, RecipeEffects]),
     StoreRouterConnectingModule.forRoot(),
   ],
   bootstrap: [AppComponent]
